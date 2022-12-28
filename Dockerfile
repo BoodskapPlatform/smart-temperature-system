@@ -3,16 +3,14 @@ LABEL maintainer="Boodskap <platform@boodskap.io>"
 
 RUN npm install -g express
 
-ENV APP_UI_HOME=/opt/boodskapui
+ENV APP_HOME=/opt/smart-temperature-system
 
-RUN mkdir -p ${APP_UI_HOME}/logs
+RUN mkdir -p ${APP_HOME}/logs
 
-WORKDIR ${APP_UI_HOME}
+WORKDIR ${APP_HOME}
 
-COPY / ${APP_UI_HOME}/
+COPY / ${APP_HOME}/
 
-RUN ls -la ${APP_UI_HOME}/
+EXPOSE 10092
 
-EXPOSE 4201
-
-ENTRYPOINT node smart-temperature-web-node.js
+CMD exec node smart-temperature-web-node.js
