@@ -114,7 +114,7 @@ function loadSnapshotPage(devId){
 
   $.ajax({
     type: 'GET',
-    url: "/snapshot/"+devId,
+    url: "snapshot/"+devId,
     dataType: 'html',
     success: function (response){
        $('#deviceSnapshotLoader').html(response);

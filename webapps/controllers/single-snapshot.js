@@ -172,8 +172,6 @@ function getDeviceMsgHistory() {
       closeLoading();
 
       if (status) {
-        console.log("renderTempHumChart---------------");
-        console.log("renderVoltageChart---------------");
         renderTempHumChart(result["values"]);
         renderVoltageChart(result["values"]);
       }
