@@ -1,7 +1,10 @@
 Pace.options.ajax.trackWebSockets = false;
 var platformTour = null;
 var boodskapEditor = false;
+var MY_BROWSER_GMT = "+05:30";
+
 $(document).ready(function () {
+    findMyGMT();
     loadGoogleAnalytics();
     loadStatistics();
     // getLicenseStatus();
@@ -70,6 +73,23 @@ function checkDecimal(val){
     }
   }
 
+  function findMyGMT(){
+    try{
+        var date = new Date().toString();
+        var dateArray = date.split(' ');
+        var res = dateArray.find((val)=>{
+            return val.includes("GMT");
+        });
+        var gmt_txt = res.split('').slice(3);
+        var final = gmt_txt[0]+gmt_txt[1]+gmt_txt[2]+":"+gmt_txt[3]+gmt_txt["4"];
+        console.log("*******************************************");
+        console.log("My Browser GMT => "+final);
+        console.log("*******************************************");
+        MY_BROWSER_GMT = final;
+    }catch(e){
+        console.error(e);
+    }
+  }
 
 function showNotification(msg, type, time) {
 

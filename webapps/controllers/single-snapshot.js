@@ -18,7 +18,13 @@ function singleSnapshotInit() {
   setTimeout(()=>{
     loadDateRanges("deviceHistory");
     loadDateRanges("voltageHistory");
+  
+    var copyRawData = new ClipboardJS('.copyRawData');
+    copyRawData.on('success', function (e) {
+        successMsg('Raw data Copied Successfully');
+    });
   },100);
+
 }
 
 function getSingleDeviceStatus() {
@@ -32,7 +38,7 @@ function getSingleDeviceStatus() {
     authType: "TOKEN",
   };
 
-  let data = { devid: single_device_id, tz: "+05:30" };
+  let data = { devid: single_device_id, tz: MY_BROWSER_GMT };
 
   loading();
 
@@ -121,6 +127,7 @@ function setSnapshotPage() {
       //Temperature conversion values in (°F, °C) both units
     },
   });
+  $(".copyRawData").attr('data-clipboard-text',single_device_obj["rawdata"]);
 }
 
 function setTemperatureData(obj) {
@@ -153,7 +160,7 @@ function getDeviceMsgHistory() {
     devid: single_device_id,
     size: 100,
     sort: "desc",
-    tz: "+05:30",
+    tz: MY_BROWSER_GMT,
     fdate: moment(fromTs).format("YYYY-MM-DD"),
     tdate: moment(toTs).format("YYYY-MM-DD"),
   };
