@@ -129,7 +129,7 @@ function loadPartDomain() {
     $('body').removeClass('bg-white')
     $("body").css('background-color','#fac300 !important')
     $("#page-container").html($("#partDomain").html());
-    $(".domain_logo").attr('src', 'images/smart-parking.png');
+    $(".domain_logo").attr('src', 'images/logo.png');
 
     for(var i=0;i<userObj.partDomains.length;i++){
         var domain = userObj.partDomains[i];

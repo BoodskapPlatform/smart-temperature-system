@@ -1,4 +1,4 @@
-# How to start the Smart Parking System?
+# How to start the Dragino LHT65 System?
 
 ### Getting Started
 This plugin requires node `>= 6.0.0` and npm `>= 1.4.15` (latest stable is recommended).
@@ -9,7 +9,7 @@ This plugin requires node `>= 6.0.0` and npm `>= 1.4.15` (latest stable is recom
 
 Once the repository has been cloned:
 ```shell
-> cd smart-parking-system
+> cd smart-temperature-system
 ```
 
 ### NPM Module Installation
@@ -21,7 +21,7 @@ Once the repository has been cloned:
 ## Configuration
 
 ### Properties
-In `smartparking.properties` file,
+In `smarttemperature.properties` file,
 ```shell
 #default property
 [server]
@@ -68,7 +68,7 @@ or
 
 ```shell
 ***************************************
-Boodskap - Smart Parking System
+Boodskap - Dragino LHT65
 ***************************************
 1] Setting server properties success
 2] Setting web properties success
@@ -89,7 +89,7 @@ or
 
 ```shell
 ************************************************************************************
-Thu Jan 10 2019 14:11:51 GMT+0530 (IST) | Boodskap - Smart Parking System Listening on 4201
+Thu Jan 10 2019 14:11:51 GMT+0530 (IST) | Boodskap - Dragino LHT65 Listening on 4201
 ************************************************************************************
 ```
 Open the Brower with this URL: http://0.0.0.0:4201

@@ -97,7 +97,7 @@ var server = require('http').Server(app,router);
 app.conf = conf;
 
 console.log("************************************************************");
-console.log(new Date() + ' | Smart Vehicle Parking - Web Portal Listening on ' + conf['web']['port']);
+console.log(new Date() + ' | Dragino LHT65 - Web Portal Listening on ' + conf['web']['port']);
 console.log("************************************************************");
 
 server.listen(conf['web']['port']);
