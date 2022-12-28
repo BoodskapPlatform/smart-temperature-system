@@ -5,7 +5,8 @@ var stat_data = null;
 // var endDate = moment().endOf('day');
 var selectedType = 1;
 var startDate = moment().subtract(6, "days").startOf("day");
-var endDate = moment().endOf("day");
+// var endDate = moment().endOf("day");
+var endDate = moment().add(1,'days').endOf("day");
 
 $(document).ready(function () {
   singleSnapshotInit();
@@ -351,9 +352,7 @@ function loadDateRanges(filterId) {
     startDate = start;
     endDate = end;
 
-    if (
-      new Date(start).getTime() === new Date(moment().startOf("day")).getTime()
-    ) {
+    if (new Date(start).getTime() === new Date(moment().startOf("day")).getTime()) {
       title = "Today:";
       range = start.format("MMM D, YYYY");
     } else if (
@@ -384,10 +383,10 @@ function loadDateRanges(filterId) {
       endDate: endDate,
       parentEl: "#" + filterId + "Parent",
       ranges: {
-        Today: [moment().startOf("day"), moment().endOf("day")],
+        Today: [moment().startOf("day"), moment().add(1,'days').endOf("day")],
         Yesterday: [
           moment().subtract(1, "days").startOf("day"),
-          moment().subtract(1, "days").endOf("day"),
+          moment().endOf("day"),
         ],
         "Last 7 Days": [
           moment().subtract(6, "days").startOf("day"),
