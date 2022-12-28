@@ -4,7 +4,7 @@ npm install
 
 node build.js
 
-# VERSION=$(cat package.json | /usr/bin/jq -r '.version')
+VERSION=$(cat package.json | /usr/bin/jq -r '.version')
 
-# docker build -t smarttemperature/ui:${VERSION} . -f Dockerfile
+docker build -t boodskapiot/lht65:${VERSION} . -f Dockerfile
 

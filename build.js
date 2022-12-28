@@ -13,18 +13,18 @@ if(args[0]){
         console.log('* Fetching from config file => '+args[0] )
     }
     catch(e){
-        prop = PropertiesReader('app.properties');
-        console.log('* Fetching from default config file => app.properties')
+        prop = PropertiesReader('smarttemperature.properties');
+        console.log('* Fetching from default config file => smarttemperature.properties')
     }
 }else{
 
     try {
-        prop = PropertiesReader(process.env.HOME + '/config/app.properties');
-        console.log('* Fetching from config file => '+process.env.HOME + '/config/app.properties')
+        prop = PropertiesReader(process.env.HOME + '/config/smarttemperature.properties');
+        console.log('* Fetching from config file => '+process.env.HOME + '/config/smarttemperature.properties')
     }
     catch(e){
-        prop = PropertiesReader('app.properties');
-        console.log('* Fetching from default config file => app.properties')
+        prop = PropertiesReader('smarttemperature.properties');
+        console.log('* Fetching from default config file => smarttemperature.properties')
     }
 }
 
