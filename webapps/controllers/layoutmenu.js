@@ -81,7 +81,7 @@ $(document).ready(function () {
 
 function restrictAccess() {
 
-    if (USER_ROLE.indexOf('admin') === -1){
+    /* if (USER_ROLE.indexOf('admin') === -1){
         $(".adminMenu").remove();
     }
 
@@ -98,8 +98,7 @@ function restrictAccess() {
         '<span>Home</span>'+
         '</a>'+
         '</li>'+userEventMenu);
-
-    }
+    } */
 }
 
 function removeCookies() {

@@ -304,7 +304,7 @@ function renderVoltageChart(list) {
     },
     yAxis: {
       axisLabel: {
-        formatter: "{value} °C",
+        formatter: "{value} V",
       },
     },
     dataZoom: [
