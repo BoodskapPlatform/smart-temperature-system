@@ -91,7 +91,7 @@ function login(){
             userObj = data;
 
             var roles = data.user.roles;
-            console.log();
+           
             if(roles.indexOf('user') === -1 && roles.indexOf('developer') === -1 && roles.indexOf('domainadmin') === -1 && roles.indexOf('admin') === -1) {
                 data.user.roles = ['user'];
                 roles = ['user'];
@@ -102,16 +102,7 @@ function login(){
                 Cookies.set('partDomain', false);
                 loadPartDomain();
             } else {
-
-                if (roles.indexOf('user') !== -1) {
-                    document.location = BASE_PATH+'/dashboard';
-                }
-                //  else if (roles.indexOf('domainadmin') !== -1) {
-                //     document.location = BASE_PATH+'/statistics-dashboard';
-                // }
-                 else {
-                    document.location = BASE_PATH+'/home';
-                }
+                document.location = BASE_PATH+'/home';
             }
 
         }else{
@@ -150,12 +141,13 @@ function switchDomain(dkey,token) {
 
             var roles = userObj.user.roles;
 
-            if(roles.indexOf('user') !== -1){
+            /* if(roles.indexOf('user') !== -1){
                 document.location = BASE_PATH+'/dashboard';
             }else{
                 document.location = BASE_PATH+'/home';
-            }
+            } */
 
+            document.location = BASE_PATH+'/home';
         }else{
             errorMsg('Something went wrong!')
         }
@@ -193,9 +185,6 @@ function register(){
     // var confirmpassword = $("#confirmpassword").val();
     var captchaStatus = grecaptcha.getResponse();
 
-    console.log("captchaStatus-----------");
-    console.log(typeof captchaStatus);
-
     if(firstname == ""){
         errorMsgBorder('First Name cannot be empty','firstname',1);
         return false;
@@ -206,7 +195,6 @@ function register(){
         return false;
     }
 
-  
     if (email === "") {
         errorMsgBorder('Email ID cannot be empty', 'email',1);
         return false;
@@ -218,7 +206,6 @@ function register(){
             errorMsgBorder('Invalid Email ID', 'email',1);
             return false;
         }
-
     }
    
     /* if(password === ""){
@@ -244,7 +231,6 @@ function register(){
         firstName: firstname,
         lastName: lastname
     };
-    console.log(data)
 
     registerCall(data,function (status, data) {
         closeLoading();
@@ -266,9 +252,9 @@ function register(){
             },3000);
         }else{
             if(data.message === 'USER_EXISTS'){
-                errorMsg('User already exists!','firstname')
+                errorMsg('User already exists!','firstname');
             }else{
-                errorMsg('Something went wrong!','firstname') 
+                errorMsg('Something went wrong!','firstname');
             }
         }
     })

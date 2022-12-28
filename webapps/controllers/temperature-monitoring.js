@@ -9,6 +9,10 @@ function onInit(){
   getDeviceStatus();
 }
 
+function deviceFilter(){
+  
+}
+
 function getDeviceStatus() {
 
     let slug = DOMAIN_KEY.toLowerCase();

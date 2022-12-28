@@ -25,7 +25,7 @@ Routes.prototype.init = function () {
                 req.session.userObj = JSON.parse(userObj);
                 req.session.role = role[0].toUpperCase();
 
-                if (role.indexOf('admin') !== -1 || role.indexOf('domainadmin') !== -1) {
+                if (role.indexOf('admin') !== -1 || role.indexOf('user') !== -1 || role.indexOf('developer') !== -1 || role.indexOf('domainadmin') !== -1) {
                     next();
                 } else {
                     if (role.indexOf('user') !== -1) {
@@ -63,12 +63,12 @@ Routes.prototype.init = function () {
         if(userObj) {
             var role = JSON.parse(userObj).user.roles;
             req.session.userObj = JSON.parse(userObj);
-
-            if (role.indexOf('user') !== -1) {
+            res.redirect(self.app.conf.basepath+'/home');
+            /* if (role.indexOf('user') !== -1) {
                 res.redirect(self.app.conf.basepath+'/dashboard');
             } else {
                 res.redirect(self.app.conf.basepath+'/home');
-            }
+            } */
 
         }else{
             res.redirect(self.app.conf.basepath+'/login');

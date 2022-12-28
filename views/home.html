@@ -89,14 +89,23 @@
                 <div style="height: calc(100vh - 160px);background: #ffffff;border-right: 1px solid #dddddd;">
                     <div class="row">
                       <div class="col-lg-12">
-                        <div style="border-bottom: 1px solid #dddddd;overflow: hidden;">
+                        <div style="border-bottom: 1px solid #dddddd;">
                           <div style="padding: 10px;font-size: 12px;font-weight: 600;display: inline-block;vertical-align: top;">
                               Device Status
                           </div>
-                          <!-- <div class="min-refresh-btn">
+                          
+                          <!-- <div class="dropdown">
+                            <div class="min-refresh-btn dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" onclick="deviceFilter()">
                               <i class="fa fa-filter"></i>
+                          </div>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                           </div> -->
-                          <div class="min-refresh-btn" onclick="getDeviceStatus()">
+
+                          <div class="min-refresh-btn" onclick="getDeviceStatus()" style="padding: 9px 14px;">
                               <i class="fa fa-refresh"></i>
                           </div>
                       </div>
