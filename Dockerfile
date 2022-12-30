@@ -1,7 +1,7 @@
 FROM node:alpine3.16
 LABEL maintainer="Boodskap <platform@boodskap.io>"
 
-RUN npm install -g express
+RUN npm install -g npm@9.2.0 && npm install -g express
 
 ENV APP_HOME=/opt/smart-temperature-system
 
@@ -11,6 +11,8 @@ WORKDIR ${APP_HOME}
 
 COPY / ${APP_HOME}/
 
-EXPOSE 10092
+RUN npm install
+
+EXPOSE 10091
 
 CMD exec node smart-temperature-web-node.js
