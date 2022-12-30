@@ -59,6 +59,10 @@ Routes.prototype.init = function () {
         res.render('home.html',{layout:'',basepath: getBasePath(req), userRole:req.session.role, response : ''});
     });
 
+    self.router.get('/snapshot/:device_id', roleCheck,function (req, res) {
+        res.render('single-snapshot.html',{layout:false,basepath: getBasePath(req), userRole:req.session.role, response : '', device_id: req.params.device_id});
+    });
+
     self.router.get('/404', roleCheck,function (req, res) {
         res.render('404.html',{layout:'',basepath: getBasePath(req), userRole:req.session.role});
     });
