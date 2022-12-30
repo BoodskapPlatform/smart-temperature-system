@@ -1,10 +1,13 @@
 $(document).ajaxError(function myErrorHandler(event, xhr, ajaxOptions, thrownError) {
     if (xhr.status === 401 && xhr.responseJSON.code === 'INVALID_AUTH_TOKEN') {
-        Cookies.remove('user_details');
+        try{
+            removeCookies();
+        }catch(e){
+            console.error(e);
+        }
         document.location = BASE_PATH+'/login';
     }
 });
-
 $(document).ready(function () {
 
     if(API_TOKEN){
@@ -27,8 +30,6 @@ function loginCall(email, password, cbk) {
         "email": email,
         "password": password,
     };
-
-    console.log(data)
 
     DOMAIN_KEY ? data['targetDomainKey']= DOMAIN_KEY : '';
 

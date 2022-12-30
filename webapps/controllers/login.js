@@ -82,7 +82,6 @@ function login(){
     loading('Please wait');
 
 
-
     loginCall(emailId.toLowerCase(), password,function (status, data) {
         closeLoading();
         $("#submitButton").removeAttr('disabled');
