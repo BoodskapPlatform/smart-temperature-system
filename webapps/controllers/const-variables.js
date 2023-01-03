@@ -10,6 +10,7 @@ var ENV = CONFIG.development ? CONFIG.development : false;
 var BASE_PATH = CONFIG.basepath;
 var DATE_TIME_FORMAT = 'MM/DD/YYYY hh:mm:ss a';
 var SHOWCASE_URL = $("#hostpath").val() ? $("#hostpath").val() : "https://showcase.boodskap.io";
+let API_TOKEN_ALT = "-";
 
 if(CONFIG.development){
     API_BASE_PATH = CONFIG.api;
