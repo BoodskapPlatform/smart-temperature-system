@@ -9,6 +9,7 @@ var CDN_PATH =  CONFIG.cdnPath;
 var ENV = CONFIG.development ? CONFIG.development : false;
 var BASE_PATH = CONFIG.basepath;
 var DATE_TIME_FORMAT = 'MM/DD/YYYY hh:mm:ss a';
+var SHOWCASE_URL = CONFIG.showcase_url ? CONFIG.showcase_url : "https://showcase.boodskap.io";
 
 if(CONFIG.development){
     API_BASE_PATH = CONFIG.api;
